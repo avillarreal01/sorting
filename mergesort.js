@@ -4,17 +4,23 @@ function split(wholeArray) {
     return [firstHalf, secondHalf];
   }
 
-  function merge(arr1, arr2){
-    var output = [];
-    while (arr1.length && arr2.length) {
-      if (arr2[0] < arr1[0]) {
-        output.push(arr2.shift());
-      } else {
-        output.push(arr1.shift());
+  function merge(left, right){
+    var output = [],
+        leftIndex = 0,
+        rightIndex = 0;
+
+    while (leftIndex < left.length && rightIndex < right.length) {
+      if (left[leftIndex] < right[rightIndex]) {
+        output.push(left[leftIndex]);
+        leftIndex++;
+      }
+      else {
+        output.push(right[rightIndex]);
+        rightIndex++;
       }
     }
-    if (arr1.length) output = output.concat(arr1);
-    if (arr2.length) output = output.concat(arr2);
+    for (; leftIndex < left.length; leftIndex++) output.push(left[leftIndex]);
+    for (; rightIndex < right.length; rightIndex++) output.push(right[rightIndex]);
     return output;
   }
 

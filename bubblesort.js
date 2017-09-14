@@ -1,9 +1,8 @@
 function swap(arr, index) {
-  var num1 = arr[index];
-  var num2 = arr[index + 1];
+  var oldLeft = arr[index];
 
-  arr[index] = num2;
-  arr[index + 1] = num1;
+  arr[index] = arr[index + 1];
+  arr[index + 1] = oldLeft;
 
   return arr;
 }
