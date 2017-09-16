@@ -1,2 +1,2 @@
 # sorting
-sorting exercise 
+Implementation of bubble and merge sorting algorithms
